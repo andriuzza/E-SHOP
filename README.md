@@ -24,6 +24,6 @@ How to launch WebApi:
 - Make as a startup project - repository project
 - Go to package manager console and input - update-database
 - Make as a startup project - E-SHOP and launch
-- To get read data from products.json file and transfer to db.
-Using Postman for instance call POST method {localhost}/api/products/post
+- To get json data from products.json file and have it in db.
+We need Postman for instance and call POST method {localhost}/api/products/post
 - Finished
