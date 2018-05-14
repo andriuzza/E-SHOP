@@ -1,0 +1,79 @@
+﻿@Styles.Render("~/Content/custom.css")
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+@{
+    ViewBag.Title = "Show";
+}
+
+<div class="main-content" >
+    <div class="row">
+        <div class="all-products page visible">
+            <div class="filters">
+                <div class="search-container topnav">
+                    <form method="POST" id="input-search" >
+                        <input id="search-id"type="text" placeholder="Search.." name="search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <form id="checkbox-form">
+                    <div class="filter-criteria" id="#manu">
+                        <span>Manufacturer</span>
+                        <label><input type="checkbox" name="manufacturer" value="apple">Apple</label>
+                        <label><input type="checkbox" name="manufacturer" value="samsung">Samsung</label>
+                        <label><input type="checkbox" name="manufacturer" value="htc">HTC</label>
+                        <label><input type="checkbox" name="manufacturer" value="nokia">Nokia</label>
+                        <label><input type="checkbox" name="manufacturer" value="zte">ZTE</label>
+                        <label><input type="checkbox" name="manufacturer" value="sony">Sony</label>
+                    </div>
+
+                    <div class="filter-criteria" id="#storage">
+                        <span>Storage</span>
+                        <label><input type="checkbox" value="16" name="storage">16 GB</label>
+                        <label><input type="checkbox" value="32" name="storage">32 GB</label>
+                    </div>
+
+                    <div class="filter-criteria" id="#os">
+                        <span>OS</span>
+                        <label><input type="checkbox" value="android" name="os">Android</label>
+                        <label><input type="checkbox" value="ios" name="os">iOS</label>
+                        <label><input type="checkbox" value="windows" name="os">Windows</label>
+                    </div>
+
+                    <button id="clear_filters" class="btn btn-primary">Clear filters</button>
+                </form>
+            </div>
+
+            <!-- Product in catalog -->
+         
+            <ul class="products-list">
+            </ul>
+        </div>
+    </div>
+    <!-- Product view -->
+    <div class="single-product page" id="1">
+        <div class="overlay"></div>
+        <div class="preview-large">
+            <h3 id="title-product">Sony Xperia Z3</h3>
+            <img id="img-product"src="../../images/sony-xperia-z3-large.jpg"/>
+            <ul class="list-group" id="specs-id"></ul>
+            <span class="close">×</span>
+        </div>
+    </div>
+   
+    <div class="clearfix"></div>
+    <ul id="pagination-id"class="pagination pull-right">
+        <!-- <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>-->
+
+    </ul>
+                
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+@Scripts.Render("~/Scripts/script.js")

@@ -3,40 +3,44 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>E-Shop assignment</title>
+    <link href="../../favicon.ico" rel="shortcut icon">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-            </div>
+<div class="navbar-fixed-top navbar-inverse navbar-static-top">
+    <div class="container">
+        <div class="collapse navbar-collapse" id="main-menu">
+            <ul class="nav navbar-nav" id="main-menu-left">
+                <li>
+                    <h1>Nortal .NET assignment</h1></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right" id="user-actions">
+                <li><a href="http://www.nortal.lt/"><img src="../../images/home.png"></a></li>
+            </ul>
+
         </div>
+
     </div>
+</div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        <footer class="bs-docs-footer">
+            <div class="container">
+                <p>
+                    Created by Nortal. Editing of this application is only allowed with the purpose of applying to Nortal.<br/>
+                    We are not responsible for the content dynamically loaded or generated on this site and do not endorse the views expressed within that content.<br/>
+                    <a href="#">Back to top</a>
+                </p>
+            </div>
         </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
 </body>
 </html>
