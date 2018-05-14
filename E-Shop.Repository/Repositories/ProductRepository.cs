@@ -72,12 +72,6 @@ namespace E_Shop.Repository.Repositories
 
         private IQueryable<Product> CheckForPaging(QueryParameters parameters, IQueryable<Product> query)
         {
-            if (parameters.Page <= 0 || 
-                (parameters.Page * parameters.PageSize) > (query.Count()))
-            {
-                parameters.Page = 1;
-            }
-
             if (parameters.PageSize > 20)
             {
                 parameters.PageSize = 3;

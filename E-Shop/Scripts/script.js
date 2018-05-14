@@ -73,8 +73,6 @@ $(function () {
 
                 var product = productsInformationDetailed.Products.find(x => x.Id == index);
 
-                console.log(product);
-
                 $('#title-product').text(product.Name + " " +
                     product.Specification.Manufacturer);
 
@@ -105,16 +103,13 @@ $(function () {
 
     function addPagination(dataInfo) {
         $("#pagination-id").empty();
-        console.log(dataInfo);
         var size = dataInfo.Parameters.TotalCount / dataInfo.Parameters.PageSize;
-        console.log(size);
+        console.log(dataInfo.Parameters.TotalCount + "   " + dataInfo.Parameters.PageSize);
         for (var i = 0; i < size; i++) {
             $('#pagination-id').append('<li><button class="page-number" >' + (i + 1) +'</button></li>');
         }
 
         $('.page-number').click(function (e) {
-            //console.log(e.text());
-            console.log($(e.target).text());
             pageSize = 2;
             pageNumber = $(e.target).text();
             getDataFromServer(data);
@@ -139,12 +134,11 @@ $(function () {
     }
 
     function getDataFromServer(data) {
-        console.log(data);
         var filter = new Object();
         filter.OperatingSystems = data.os;
         filter.Manufacturers = data.manufacturers;
         filter.Storages = data.storages;
-        console.log(pageNumber + "   " + pageSize)
+
         $.ajax({
             type: "POST",
             data: JSON.stringify(filter),
